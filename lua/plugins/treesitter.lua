@@ -22,6 +22,10 @@ return {
         additional_vim_regex_highlighting = false,
       },
       autotag = { enable = true },
+      context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
+      },
     },
   },
   { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
