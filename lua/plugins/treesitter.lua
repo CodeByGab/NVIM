@@ -13,6 +13,9 @@ return {
         "html",
         "css",
         "scss",
+        "c-sharp",
+        "yaml",
+        "rust",
       },
       highlight = {
         enable = true,

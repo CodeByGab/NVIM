@@ -39,8 +39,8 @@ return {
 
 
 		dashboard.section.buttons.val = {
-			dashboard.button("f", "" .. "  File Explorer", "<cmd> Neotree filesystem reveal right<CR>"),
-			dashboard.button("n", "" .. "  Find File", "<cmd>Telescope find_files hidden=true no_ignore=true<CR>"),
+			dashboard.button("n", "" .. "  File Explorer", "<cmd> Neotree filesystem reveal right<CR>"),
+			dashboard.button("f", "" .. "  Find File", "<cmd>Telescope find_files hidden=true no_ignore=true<CR>"),
       dashboard.button("e", "" .. "  New File", "<cmd>enew<CR>"),
       dashboard.button("l", "󰒲" .. "  Lazy", "<cmd>Lazy<CR>"),
       dashboard.button("m", "" .. "  Mason", ":Mason<CR>"),

@@ -14,6 +14,14 @@ return {
     ts_ls = {},
     cssls = {},
     html = {},
+    omnisharp = {
+      cmd = {
+        vim.fn.stdpath("data") .. "/mason/bin/OmniSharp",
+        "--languageserver",
+        "--hostPID",
+        tostring(vim.fn.getpid()),
+      },
+    },
     -- pyright = {},
   },
 
@@ -27,19 +35,18 @@ return {
         vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true, buffer = bufnr })
       end
 
-      map("n", "gd", vim.lsp.buf.definition)     -- go to definition
-      map("n", "gr", vim.lsp.buf.references)     -- go to references
-      map("n", "K",  vim.lsp.buf.hover)          -- mostrar documentação
-      map("n", "<leader>rn", vim.lsp.buf.rename) -- rename
+      map("n", "gd", vim.lsp.buf.definition)       -- go to definition
+      map("n", "gr", vim.lsp.buf.references)       -- go to references
+      map("n", "K", vim.lsp.buf.hover)             -- mostrar documentação
+      map("n", "<leader>rn", vim.lsp.buf.rename)   -- rename
       map("n", "<leader>ca", vim.lsp.buf.code_action) -- code action
     end
 
     -- Configura cada server usando o on_attach e os opts respectivos
     for server, server_opts in pairs(opts) do
-      server_opts.on_attach = on_attach      -- insere o on_attach
+      server_opts.on_attach = on_attach -- insere o on_attach
       server_opts.capabilities = capabilities
       lspconfig[server].setup(server_opts)
     end
   end,
 }
-

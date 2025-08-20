@@ -15,10 +15,10 @@ vim.o.scrolloff = 5
 
 -- Ativa o treesitter sempre nesses arquivos
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "typescriptreact", "tsx", "scss", "css", "javascript" },
-  callback = function()
-    vim.cmd("TSBufEnable highlight")
-  end,
+	pattern = { "typescriptreact", "tsx", "scss", "css", "javascript" },
+	callback = function()
+		vim.cmd("TSBufEnable highlight")
+	end,
 })
 
 -- Code folding do vim
@@ -27,3 +27,8 @@ vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldenable = false -- começa com tudo aberto
 
 vim.cmd("set number")
+
+vim.keymap.set("n", "<leader>z", function()
+	require("zen-mode").toggle()
+end, { desc = "Toggle Zen Mode" })
+
