@@ -14,6 +14,13 @@ local themes = {
     name = "miasma",
     colorscheme = "miasma",
   },
+  {
+    name = "oxocarbon dark",
+    colorscheme = "oxocarbon",
+		before = [[
+    vim.opt.background = "dark"
+    ]],
+  },
 	{
 		name = "mocha",
 		colorscheme = "catppuccin-mocha",
@@ -30,13 +37,13 @@ local themes = {
 		name = "aura dark",
 		colorscheme = "aura-dark",
 	},
+	-- {
+	-- 	name = "aura dark soft text",
+	-- 	colorscheme = "aura-dark-soft-text",
+	-- },
 	{
 		name = "aura soft dark",
 		colorscheme = "aura-soft-dark",
-	},
-	{
-		name = "aura dark soft text",
-		colorscheme = "aura-dark-soft-text",
 	},
 	{
 		name = "aura soft dark soft text",
@@ -83,6 +90,13 @@ local themes = {
   {
     name = "tokyonight day",
     colorscheme = "tokyonight-day",
+  },
+  {
+    name = "oxocarbon light",
+    colorscheme = "oxocarbon",
+		before = [[
+    vim.opt.background = "light"
+    ]],
   },
 }
 

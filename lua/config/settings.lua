@@ -26,6 +26,8 @@ vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldenable = false -- começa com tudo aberto
 
+vim.o.splitright = true;
+
 vim.cmd("set number")
 
 vim.keymap.set("n", "<leader>z", function()

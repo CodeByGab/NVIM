@@ -4,7 +4,7 @@ require("config.lazy")
 require("themes.gruvbox")
 
 vim.o.background = "dark"
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme sakura]])
 
 vim.notify_orig = vim.notify
 vim.notify = function(msg, ...)
