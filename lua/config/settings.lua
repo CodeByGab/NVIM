@@ -11,7 +11,7 @@ vim.opt.shiftwidth = tab
 
 -- Deixa uma margem de 5 linhas no começo e no fim
 vim.opt.swapfile = false
-vim.o.scrolloff = 5
+vim.o.scrolloff = 10
 
 -- Ativa o treesitter sempre nesses arquivos
 vim.api.nvim_create_autocmd("FileType", {
