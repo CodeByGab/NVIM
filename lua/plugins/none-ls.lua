@@ -13,6 +13,7 @@ return {
 				none_ls.builtins.formatting.stylua,
 				none_ls.builtins.formatting.prettier,
         none_ls.builtins.formatting.clang_format,
+        none_ls.builtins.formatting.google_java_format,
 				require("none-ls.diagnostics.eslint_d"),
 				-- none_ls.builtins.diagnostics.eslint_d,
 			},

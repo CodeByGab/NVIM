@@ -1,53 +1,75 @@
 return {
-  "neovim/nvim-lspconfig",
-  dependencies = { "mason-org/mason-lspconfig.nvim" },
-  opts = {
-    lua_ls = {
-      settings = {
-        Lua = {
-          diagnostics = { globals = { "vim" } },
-          workspace = { library = vim.api.nvim_get_runtime_file("", true) },
-          telemetry = { enable = false },
-        },
-      },
-    },
-    ts_ls = {},
-    cssls = {},
-    html = {},
-    omnisharp = {
-      cmd = {
-        vim.fn.stdpath("data") .. "/mason/bin/OmniSharp",
-        "--languageserver",
-        "--hostPID",
-        tostring(vim.fn.getpid()),
-      },
-    },
-    clangd = {},
-    -- pyright = {},
-  },
+	"neovim/nvim-lspconfig",
+	dependencies = { "mason-org/mason-lspconfig.nvim" },
+	opts = {
+		lua_ls = {
+			settings = {
+				Lua = {
+					diagnostics = { globals = { "vim" } },
+					workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+					telemetry = { enable = false },
+				},
+			},
+		},
+		-- NAO MUDA ESSA PORRA, É TS_LS E NAO TSSERVER
+		ts_ls = {},
+		cssls = {},
+		html = {},
+		omnisharp = {
+			cmd = {
+				vim.fn.stdpath("data") .. "/mason/bin/OmniSharp",
+				"--languageserver",
+				"--hostPID",
+				tostring(vim.fn.getpid()),
+			},
+		},
+		clangd = {},
+		jdtls = {
+			cmd = {
+				"java",
+				"-Declipse.application=org.eclipse.jdt.ls.core.id1",
+				"-Dosgi.bundles.defaultStartLevel=4",
+				"-Declipse.product=org.eclipse.jdt.ls.core.product",
+				"-Dlog.protocol=true",
+				"-Dlog.level=ALL",
+				"-Xmx2G",
+				"-jar",
+				"/home/odeioportas/.local/share/jdtls/plugins/org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar",
+				"-configuration",
+				"/home/odeioportas/.local/share/jdtls/config_linux",
+				"-data",
+				"/home/odeioportas/.local/share/eclipse/workspace",
+			},
+			root_dir = function()
+				local util = require("lspconfig.util")
+				return util.root_pattern(".git", "pom.xml", "build.gradle")(vim.fn.getcwd())
+			end,
+		},
+		-- pyright = {},
+	},
 
-  config = function(_, opts)
-    local lspconfig = require("lspconfig")
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+	config = function(_, opts)
+		local lspconfig = require("lspconfig")
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    -- Esse on_attach será aplicado a todos os servidores do loop abaixo
-    local on_attach = function(_, bufnr)
-      local map = function(mode, lhs, rhs)
-        vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true, buffer = bufnr })
-      end
+		-- Esse on_attach será aplicado a todos os servidores do loop abaixo
+		local on_attach = function(_, bufnr)
+			local map = function(mode, lhs, rhs)
+				vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true, buffer = bufnr })
+			end
 
-      map("n", "gd", vim.lsp.buf.definition)       -- go to definition
-      map("n", "gr", vim.lsp.buf.references)       -- go to references
-      map("n", "K", vim.lsp.buf.hover)             -- mostrar documentação
-      map("n", "<leader>rn", vim.lsp.buf.rename)   -- rename
-      map("n", "<leader>ca", vim.lsp.buf.code_action) -- code action
-    end
+			map("n", "gd", vim.lsp.buf.definition) -- go to definition
+			map("n", "gr", vim.lsp.buf.references) -- go to references
+			map("n", "K", vim.lsp.buf.hover) -- mostrar documentação
+			map("n", "<leader>rn", vim.lsp.buf.rename) -- rename
+			map("n", "<leader>ca", vim.lsp.buf.code_action) -- code action
+		end
 
-    -- Configura cada server usando o on_attach e os opts respectivos
-    for server, server_opts in pairs(opts) do
-      server_opts.on_attach = on_attach -- insere o on_attach
-      server_opts.capabilities = capabilities
-      lspconfig[server].setup(server_opts)
-    end
-  end,
+		-- Configura cada server usando o on_attach e os opts respectivos
+		for server, server_opts in pairs(opts) do
+			server_opts.on_attach = on_attach -- insere o on_attach
+			server_opts.capabilities = capabilities
+			lspconfig[server].setup(server_opts)
+		end
+	end,
 }
