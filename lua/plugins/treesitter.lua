@@ -16,6 +16,8 @@ return {
         "c-sharp",
         "yaml",
         "rust",
+        "cpp",
+        "java"
       },
       highlight = {
         enable = true,

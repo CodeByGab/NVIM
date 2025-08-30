@@ -15,6 +15,18 @@ local themes = {
     colorscheme = "miasma",
   },
   {
+    name = "evergarden spring",
+    colorscheme = "evergarden-spring"
+  },
+  {
+    name = "evergarden fall",
+    colorscheme = "evergarden-fall"
+  },
+  {
+    name = "evergarden winter",
+    colorscheme = "evergarden-winter"
+  },
+  {
     name = "oxocarbon dark",
     colorscheme = "oxocarbon",
 		before = [[
@@ -68,7 +80,14 @@ local themes = {
     name = "tokyonight storm",
     colorscheme = "tokyonight-storm",
   },
-
+  {
+    name = "kanagawa wave",
+    colorscheme = "kanagawa-wave",
+  },
+  {
+    name = "kanagawa dragon",
+    colorscheme = "kanagawa-dragon",
+  },
 	{
 		name = "gruvbox light",
 		colorscheme = "gruvbox",
@@ -92,12 +111,20 @@ local themes = {
     colorscheme = "tokyonight-day",
   },
   {
-    name = "oxocarbon light",
-    colorscheme = "oxocarbon",
-		before = [[
-    vim.opt.background = "light"
-    ]],
+    name = "kanagawa lotus",
+    colorscheme = "kanagawa-lotus",
   },
+  {
+    name = "evergarden summer",
+    colorscheme = "evergarden-summer"
+  },
+  -- {
+  --   name = "oxocarbon light",
+  --   colorscheme = "oxocarbon",
+		-- before = [[
+  --   vim.opt.background = "light"
+  --   ]],
+  -- },
 }
 
 return themes

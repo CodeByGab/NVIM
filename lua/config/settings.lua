@@ -15,7 +15,7 @@ vim.o.scrolloff = 10
 
 -- Ativa o treesitter sempre nesses arquivos
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "typescriptreact", "tsx", "scss", "css", "javascript" },
+	pattern = { "typescriptreact", "tsx", "scss", "css", "javascript", "c", "cpp"},
 	callback = function()
 		vim.cmd("TSBufEnable highlight")
 	end,
@@ -29,8 +29,4 @@ vim.o.foldenable = false -- começa com tudo aberto
 vim.o.splitright = true;
 
 vim.cmd("set number")
-
-vim.keymap.set("n", "<leader>z", function()
-	require("zen-mode").toggle()
-end, { desc = "Toggle Zen Mode" })
 

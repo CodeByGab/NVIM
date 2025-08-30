@@ -22,6 +22,7 @@ return {
         tostring(vim.fn.getpid()),
       },
     },
+    clangd = {},
     -- pyright = {},
   },
 
