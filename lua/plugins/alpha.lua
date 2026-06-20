@@ -32,7 +32,7 @@ return {
       end
     end
 
-    dashboard.section.header.val = vim.split(choose_logo("mini-knight"), "\n")
+    dashboard.section.header.val = vim.split(choose_logo("windows95"), "\n")
 
     dashboard.section.buttons.val = {
       dashboard.button(
@@ -47,7 +47,8 @@ return {
         "<cmd>Telescope find_files hidden=true no_ignore=true<CR>"
       ),
       -- ファイルを探す (Fairu o sagasu) → Procurar arquivo / Find File
-      dashboard.button("e", "" .. " 新(あたら)しいファイル (New File)", "<cmd>enew<CR>"),
+      -- dashboard.button("e", "" .. " 新(あたら)しいファイル (New File)", "<cmd>enew<CR>"),
+      dashboard.button("e", "" .. " 新しいファイル (New File)", "<cmd>enew<CR>"),
       -- 新しいファイル (Atarashii fairu) → Novo arquivo / New File
       dashboard.button("l", "󰒲" .. " レイジー (Lazy)", "<cmd>Lazy<CR>"),
       -- レイジー (Reijii) → Lazy (plugin)

@@ -1,4 +1,8 @@
 local themes = {
+  {
+    name = "pywal16",
+    colorscheme = "pywal16",
+  },
 	{
 		name = "gruvbox dark",
 		colorscheme = "gruvbox",
@@ -15,24 +19,36 @@ local themes = {
     colorscheme = "miasma",
   },
   {
-    name = "evergarden spring",
-    colorscheme = "evergarden-spring"
+    name = "evergarden winter",
+    colorscheme = "evergarden-winter"
   },
   {
     name = "evergarden fall",
     colorscheme = "evergarden-fall"
   },
   {
-    name = "evergarden winter",
-    colorscheme = "evergarden-winter"
+    name = "evergarden spring",
+    colorscheme = "evergarden-spring"
   },
   {
-    name = "oxocarbon dark",
-    colorscheme = "oxocarbon",
+    name = "sakura dark",
+    colorscheme = "sakura",
 		before = [[
-    vim.opt.background = "dark"
+        vim.opt.background = "dark" -- or "light"
     ]],
   },
+  {
+    name = "strawberry",
+    colorscheme = "strawberry-dark",
+  },
+	{
+		name = "rose pine moon",
+		colorscheme = "rose-pine-moon",
+	},
+	{
+		name = "rose pine main",
+		colorscheme = "rose-pine-main",
+	},
 	{
 		name = "mocha",
 		colorscheme = "catppuccin-mocha",
@@ -45,14 +61,29 @@ local themes = {
 		name = "frappe",
 		colorscheme = "catppuccin-frappe",
 	},
+  {
+    name = "nightblossom",
+    colorscheme = "nightblossom",
+  },
+  {
+    name = "nightblossom sakura",
+    colorscheme = "nightblossom-sakura",
+  },
+  {
+    name = "nightblossom pastel",
+    colorscheme = "nightblossom-pastel",
+  },
+  {
+    name = "oxocarbon dark",
+    colorscheme = "oxocarbon",
+		before = [[
+    vim.opt.background = "dark"
+    ]],
+  },
 	{
 		name = "aura dark",
 		colorscheme = "aura-dark",
 	},
-	-- {
-	-- 	name = "aura dark soft text",
-	-- 	colorscheme = "aura-dark-soft-text",
-	-- },
 	{
 		name = "aura soft dark",
 		colorscheme = "aura-soft-dark",
@@ -61,13 +92,6 @@ local themes = {
 		name = "aura soft dark soft text",
 		colorscheme = "aura-soft-dark-soft-text",
 	},
-  {
-    name = "sakura dark",
-    colorscheme = "sakura",
-		before = [[
-        vim.opt.background = "dark" -- or "light"
-    ]],
-  },
   {
     name = "tokyonight night",
     colorscheme = "tokyonight-night",
@@ -88,6 +112,10 @@ local themes = {
     name = "kanagawa dragon",
     colorscheme = "kanagawa-dragon",
   },
+  {
+    name = "ashen",
+    colorscheme = "ashen",
+  },
 	{
 		name = "gruvbox light",
 		colorscheme = "gruvbox",
@@ -99,12 +127,20 @@ local themes = {
 		name = "latte",
 		colorscheme = "catppuccin-latte",
 	},
+	{
+		name = "rose pine dawn",
+		colorscheme = "rose-pine-dawn",
+	},
   {
     name = "sakura light",
     colorscheme = "sakura",
 		before = [[
         vim.opt.background = "light"
     ]],
+  },
+  {
+    name = "strawberry light",
+    colorscheme = "strawberry-light",
   },
   {
     name = "tokyonight day",

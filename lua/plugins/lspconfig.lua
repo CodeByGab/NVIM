@@ -45,7 +45,7 @@ return {
 				return util.root_pattern(".git", "pom.xml", "build.gradle")(vim.fn.getcwd())
 			end,
 		},
-		-- pyright = {},
+		pyright = {},
 	},
 
 	config = function(_, opts)
@@ -67,9 +67,11 @@ return {
 
 		-- Configura cada server usando o on_attach e os opts respectivos
 		for server, server_opts in pairs(opts) do
-			server_opts.on_attach = on_attach -- insere o on_attach
-			server_opts.capabilities = capabilities
-			lspconfig[server].setup(server_opts)
+      server_opts.on_attach = on_attach
+      server_opts.capabilities = capabilities
+
+      vim.lsp.config[server] = server_opts
+      vim.lsp.enable(server)
 		end
 	end,
 }
